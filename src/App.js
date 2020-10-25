@@ -3,44 +3,14 @@ import './App.css';
 import Paper from './components/Paper';
 import Header from './components/Header';
 import TodoForm from './components/TodoForm';
+import Todos from './components/Todos';
 
 function App() {
   return (
     <Paper>
       <Header/>
       <TodoForm/>
-      <section className="todos">
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-        <div className="todo">
-          <span className="todo-text">Test</span>
-        </div>
-      </section>
+      <Todos/>
     </Paper>
   );
 }
