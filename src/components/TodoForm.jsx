@@ -10,6 +10,10 @@ const TodoForm = ({ addTodo, showAdd }) => {
             alert("Silahkan isi inputan anda!");
             return;
         }
+        if (value.length > 40) {
+            alert("Inputan melebihi 40 karakter");
+            return;
+        }
         addTodo(value);
         setValue("");
     }
