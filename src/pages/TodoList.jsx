@@ -13,15 +13,21 @@ const TodoList = () => {
     { text: "Belajar MongoDB" },
   ]); 
 
+  const [ showAdd, setShowAdd ] = useState(false); 
+
   const addTodo = value =>{
     const addedTodo = [...todos, { text: value}];
     setTodos(addedTodo);
   }
 
+  const showAddToggle = () => setShowAdd(!showAdd);
+
+  console.log("show: ", showAdd);
+
   return (
     <Paper>
-      <Header/>
-      <TodoForm addTodo={addTodo}/>
+      <Header showAddToggle={showAddToggle}/>
+      <TodoForm addTodo={addTodo} showAdd={showAdd}/>
       <Todos todos={todos}/>
     </Paper>
   );
