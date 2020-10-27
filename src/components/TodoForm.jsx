@@ -26,13 +26,12 @@ const TodoForm = ({ addTodo, showAdd }) => {
     } else {
         return null;
     }
-    
+
 }
 
 TodoForm.propTypes = {
     addTodo: PropTypes.func.isRequired,
     showAdd: PropTypes.bool.isRequired
-
 }
 
 export default TodoForm;

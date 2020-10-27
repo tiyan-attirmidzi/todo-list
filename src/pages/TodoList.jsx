@@ -22,8 +22,6 @@ const TodoList = () => {
 
   const showAddToggle = () => setShowAdd(!showAdd);
 
-  console.log("show: ", showAdd);
-
   return (
     <Paper>
       <Header showAddToggle={showAddToggle}/>
@@ -31,7 +29,7 @@ const TodoList = () => {
       <Todos todos={todos}/>
     </Paper>
   );
-}
 
+}
 
 export default TodoList;
