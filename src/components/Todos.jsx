@@ -1,48 +1,23 @@
+import PropTypes from 'prop-types';
 import React from "react";
 import Todo from "./Todo";
 
-const Todos = () => {
-    const todos = [
-        {
-            text: "Belajar React"
-        },
-        {
-            text: "Belajar React Native"
-        },
-        {
-            text: "Belajar Express JS"
-        },
-        {
-            text: "Belajar MongoDB"
-        },
-        {
-            text: "Belajar Python"
-        },
-        {
-            text: "Belajar TensorFlow"
-        },
-        {
-            text: "Belajar Golang"
-        },
-        {
-            text: "Belajar NodeJS"
-        },
-        {
-            text: "Belajar NextJS"
-        },
-        {
-            text: "Belajar Vue"
-        },
-    ];
+const Todos = ({ todos }) => {
     return (
         <section className="todos">
             {
-                todos.map(todo => {
-                    return <Todo text={todo.text}/>
+                todos.map((todo, index) => {
+                    return <Todo key={index} text={todo.text}/>
                 })
             }
         </section>
     );
 }
+
+Todos.propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string
+    }))
+};
 
 export default Todos;
