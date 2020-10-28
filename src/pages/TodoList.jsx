@@ -14,10 +14,15 @@ const TodoList = () => {
   ]); 
 
   const [ showAdd, setShowAdd ] = useState(false); 
-
+  
   const addTodo = value =>{
-    const addedTodo = [...todos, { text: value, isComplated: false }];
-    setTodos(addedTodo);
+    if (todos.length < 10) {
+      const addedTodo = [...todos, { text: value, isComplated: false }];
+      setTodos(addedTodo);
+    } else {
+      alert("Silahkan Selesaikan Terlebih Dahulu Task Anda!");
+      return;
+    }
   }
 
   const complateTodo = (index) => {
@@ -26,7 +31,7 @@ const TodoList = () => {
     setTodos(addedTodo);
   }
   const showAddToggle = () => setShowAdd(!showAdd);
-  console.log("todos : ", todos);
+
   return (
     <Paper>
       <Header showAddToggle={showAddToggle} showAdd={showAdd}/>
