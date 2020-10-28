@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React, { useState } from "react";
 import Paper from '../components/Paper';
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import TodoForm from '../components/TodoForm';
 import Todos from '../components/Todos';
 
@@ -25,7 +25,9 @@ const TodoList = () => {
     }
   }
 
-  const clearTodo = () => !showAdd && setTodos([]);
+  // const clearTodo = () => !showAdd && setTodos([]);
+  const clearTodo = () => showAdd ? alert("Silahkan tutup terlebih dahulu form inputannya!") : setTodos([]);
+
 
   const complateTodo = (index) => {
     const addedTodo = [...todos];
