@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
 import React, { useState } from "react";
-import Paper from '../components/Paper';
+import Paper from '../components/paper/Paper';
 import Header from '../components/header/Header';
-import TodoForm from '../components/TodoForm';
-import Todos from '../components/Todos';
+import TodoForm from '../components/todo-form/TodoForm';
+import Todos from '../components/todos/Todos';
 
 const TodoList = () => {
 
