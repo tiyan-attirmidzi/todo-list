@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 const Todo = ({ text, complateTodo, index, isComplated }) => {
     return (
-        <div className="todo" onClick={() => complateTodo(index)}>
-            <span className="todo-text" style={{ textDecoration: isComplated ? "line-through" : "initial" }}>{text}</span>
+        <div className="todo" onClick={ () => complateTodo(index) }>
+            <span className="todo-text" style={{ textDecoration: isComplated ? "line-through" : "initial" }}>{ text }</span>
         </div>
     );
 }

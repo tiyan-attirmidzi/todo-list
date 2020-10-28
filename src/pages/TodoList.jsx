@@ -25,22 +25,21 @@ const TodoList = () => {
     }
   }
 
-  const clearTodo = () => {
-    setTodos([]);
-  }
+  const clearTodo = () => !showAdd && setTodos([]);
 
   const complateTodo = (index) => {
     const addedTodo = [...todos];
     addedTodo[index].isComplated = !addedTodo[index].isComplated;
     setTodos(addedTodo);
   }
+
   const showAddToggle = () => setShowAdd(!showAdd);
 
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd} clearTodo={clearTodo}/>
-      <TodoForm addTodo={addTodo} showAdd={showAdd}/>
-      <Todos todos={todos} complateTodo={complateTodo}/>
+      <Header showAddToggle={ showAddToggle } showAdd={ showAdd } clearTodo={ clearTodo }/>
+      <TodoForm addTodo={ addTodo } showAdd={ showAdd }/>
+      <Todos todos={ todos } complateTodo={ complateTodo }/>
     </Paper>
   );
 

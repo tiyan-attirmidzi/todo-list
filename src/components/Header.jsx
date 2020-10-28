@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import Button from './Button'
 
 const Header = ({ showAddToggle, showAdd, clearTodo }) => {
     return (
         <section className="header">
-            <button className="header-btn main-black-color" onClick={showAddToggle}>{showAdd ? "Finish" : "Add"}</button>
+            <Button onClick={ showAddToggle } text={ showAdd ? "Finish" : "Add" } align="left"/>
             <h1 className="header-title">Todo Lists</h1>
-            <button className="header-btn main-red-color"  onClick={clearTodo}>Clear</button>
+            <Button onClick={ clearTodo } text="Clear" align="right"/>
         </section>
     );
 }

@@ -21,8 +21,8 @@ const TodoForm = ({ addTodo, showAdd }) => {
     if (showAdd) {
         return (
             <section className="add">
-                <form className="add-form" onSubmit={handleFormSubmit}>
-                    <input type="text" className="add-input" value={value} onChange={e => setValue(e.target.value)} />
+                <form className="add-form" onSubmit={ handleFormSubmit }>
+                    <input type="text" className="add-input" value={ value } onChange={ e => setValue(e.target.value) } />
                     <button className="add-btn main-black-color">Enter</button>
                 </form>
             </section>

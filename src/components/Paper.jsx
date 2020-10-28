@@ -5,7 +5,7 @@ const Paper = ({ children }) => {
     return (
         <div className="container">
             <div className="frame">
-                {children}
+                { children }
             </div>
         </div>
     );

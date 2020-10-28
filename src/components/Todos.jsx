@@ -7,7 +7,7 @@ const Todos = ({ todos, complateTodo }) => {
         <section className="todos">
             {
                 todos.length > 0 && todos.map((todo, index) => {
-                    return <Todo key={index} text={todo.text} isComplated={todo.isComplated} complateTodo={complateTodo} index={index}/>
+                    return <Todo key={ index } text={ todo.text } isComplated={ todo.isComplated } complateTodo={ complateTodo } index={ index }/>
                 })
             }
             {
