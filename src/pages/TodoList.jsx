@@ -8,25 +8,39 @@ import Todos from '../components/Todos';
 const TodoList = () => {
 
   const [ todos, setTodos ] = useState([
-    { text: "Belajar React" },
-    { text: "Belajar Express JS" },
-    { text: "Belajar MongoDB" },
+    { text: "Belajar React", isComplated: false },
+    { text: "Belajar Express JS", isComplated: false },
+    { text: "Belajar MongoDB", isComplated: false },
   ]); 
 
   const [ showAdd, setShowAdd ] = useState(false); 
-
+  
   const addTodo = value =>{
-    const addedTodo = [...todos, { text: value}];
-    setTodos(addedTodo);
+    if (todos.length < 10) {
+      const addedTodo = [...todos, { text: value, isComplated: false }];
+      setTodos(addedTodo);
+    } else {
+      alert("Silahkan Selesaikan Terlebih Dahulu Task Anda!");
+      return;
+    }
   }
 
+  const clearTodo = () => {
+    setTodos([]);
+  }
+
+  const complateTodo = (index) => {
+    const addedTodo = [...todos];
+    addedTodo[index].isComplated = !addedTodo[index].isComplated;
+    setTodos(addedTodo);
+  }
   const showAddToggle = () => setShowAdd(!showAdd);
 
   return (
     <Paper>
-      <Header showAddToggle={showAddToggle} showAdd={showAdd}/>
+      <Header showAddToggle={showAddToggle} showAdd={showAdd} clearTodo={clearTodo}/>
       <TodoForm addTodo={addTodo} showAdd={showAdd}/>
-      <Todos todos={todos}/>
+      <Todos todos={todos} complateTodo={complateTodo}/>
     </Paper>
   );
 
