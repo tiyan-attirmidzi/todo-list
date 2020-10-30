@@ -1,26 +1,34 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import styles from './button.module.css';
-import cns from 'classnames';
+// import styles from './button.module.css';
+// import cns from 'classnames';
+import * as styles from './button.styles'
 
 const Button = ({ text, onClick, color, align }) => {
 
-    // const classNames = [
-    //     styles.headerBtn,
-    //     color === "black" && styles.mainBlackColor,
-    //     color === "red" && styles.mainRedColor,
-    //     align === "left" && styles.alignLeft,
-    //     align === "right" && styles.alignRight
-    // ].join(" ");
+    /*
+        option 1 defult
+        const classNames = [
+            styles.headerBtn,
+            color === "black" && styles.mainBlackColor,
+            color === "red" && styles.mainRedColor,
+            align === "left" && styles.alignLeft,
+            align === "right" && styles.alignRight
+        ].join(" ");
+    */
 
-    const classNames = cns(styles.headerBtn, {
-        [styles.mainBlackColor]: color === "black", 
-        [styles.mainRedColor]: color === "red", 
-        [styles.alignLeft]: align === "left", 
-        [styles.alignRight]: align === "right", 
-    });
+    /*
+        option 2 css module
+        const classNames = cns(styles.headerBtn, {
+            [styles.mainBlackColor]: color === "black", 
+            [styles.mainRedColor]: color === "red", 
+            [styles.alignLeft]: align === "left", 
+            [styles.alignRight]: align === "right", 
+        });
+        return <button className={ classNames } onClick={ onClick }>{ text }</button>
+    */
 
-    return <button className={ classNames } onClick={ onClick }>{ text }</button>
+    return <button css={ styles.button({ color, align }) } onClick={ onClick }>{ text }</button>
 
 }
 
