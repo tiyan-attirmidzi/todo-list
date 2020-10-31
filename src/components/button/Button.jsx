@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from 'prop-types';
 // import styles from './button.module.css';
 // import cns from 'classnames';
-import * as styles from './button.styles'
+import * as styles from './button.styles';
+import { useTheme } from 'emotion-theming';
 
 const Button = ({ text, onClick, color, align }) => {
 
@@ -27,8 +28,10 @@ const Button = ({ text, onClick, color, align }) => {
         });
         return <button className={ classNames } onClick={ onClick }>{ text }</button>
     */
+    
+    const theme = useTheme();
 
-    return <button css={ styles.button({ color, align }) } onClick={ onClick }>{ text }</button>
+    return <button css={ styles.button({ color, align, theme }) } onClick={ onClick }>{ text }</button>
 
 }
 
