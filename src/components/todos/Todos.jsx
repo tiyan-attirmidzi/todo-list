@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
 import React from "react";
 import Todo from "../todo/Todo";
-import styles from "./todos.module.css";
+// import styles from "./todos.module.css";
+import * as styles from './todos.styles';
 
 const Todos = ({ todos, complateTodo }) => {
     return (
-        <section className={ styles.todos }>
+        <section css={ styles.todos }>
             {
                 todos.length > 0 && todos.map((todo, index) => {
                     return <Todo key={ index } text={ todo.text } isComplated={ todo.isComplated } complateTodo={ complateTodo } index={ index }/>
@@ -13,7 +14,7 @@ const Todos = ({ todos, complateTodo }) => {
             }
             {
                 todos.length === 0 && (
-                    <div className={ styles.todoPlaceholderText }>
+                    <div css={ styles.todoPlaceholderText }>
                         Untuk membuat TODO baru silahkann klik tombol {" "} <span className={ styles.addButtonPlaceholderText }>Add</span>
                     </div>
                 )

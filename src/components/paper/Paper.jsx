@@ -1,15 +1,21 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import styles from './paper.module.css';
+// import * as styles from './paper.module.css';
+import * as styles from './paper.styles';
+import { useTheme } from 'emotion-theming';
 
 const Paper = ({ children }) => {
+    
+    const theme = useTheme();
+    
     return (
-        <div className={ styles.container }>
-            <div className={ styles.frame }>
+        <div css={ styles.container({ theme }) }>
+            <div css={ styles.frame({ theme }) }>
                 { children }
             </div>
         </div>
     );
+
 }
 
 Paper.propTypes = {
