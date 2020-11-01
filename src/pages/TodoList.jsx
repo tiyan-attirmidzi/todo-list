@@ -4,6 +4,8 @@ import Paper from '../components/paper/Paper';
 import Header from '../components/header/Header';
 import TodoForm from '../components/todo-form/TodoForm';
 import Todos from '../components/todos/Todos';
+import Container from '../layouts/Container';
+// import Item from '../layouts/Item';
 
 const TodoList = () => {
 
@@ -39,9 +41,11 @@ const TodoList = () => {
 
   return (
     <Paper>
-      <Header showAddToggle={ showAddToggle } showAdd={ showAdd } clearTodo={ clearTodo }/>
-      <TodoForm addTodo={ addTodo } showAdd={ showAdd }/>
-      <Todos todos={ todos } complateTodo={ complateTodo }/>
+      <Container flexDirection="column" justifyContent="space-between" height="100%">
+        <Header showAddToggle={ showAddToggle } showAdd={ showAdd } clearTodo={ clearTodo }/>
+        <TodoForm addTodo={ addTodo } showAdd={ showAdd }/>
+        <Todos todos={ todos } complateTodo={ complateTodo }/>
+      </Container>
     </Paper>
   );
 

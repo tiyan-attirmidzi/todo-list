@@ -4,16 +4,26 @@ import Button from '../button/Button';
 // import styles from './header.module.css';
 import * as styles from './header.styles';
 import { useTheme } from 'emotion-theming';
+import Container from '../../layouts/Container';
+import Item from '../../layouts/Item';
 
 const Header = ({ showAddToggle, showAdd, clearTodo }) => {
 
     const theme = useTheme();
 
     return (
-        <section css={ styles.header }>
-            <Button onClick={ showAddToggle } text={ showAdd ? "Finish" : "Add" } color="black" align="left"/>
-            <h1 css={ styles.headerTitle(theme) }>Todo Lists</h1>
-            <Button onClick={ clearTodo } text="Clear" color="red" align="right"/>
+        <section className="header-component">
+            <Container alignItems="flex-start">
+                <Item flex={1}>
+                    <Button onClick={ showAddToggle } text={ showAdd ? "Finish" : "Add" } color="black" align="left"/>
+                </Item>
+                <Item flex={2}>
+                    <h1 css={ styles.headerTitle(theme) }>Todo Lists</h1>
+                </Item>
+                <Item flex={1} textAlign="right">
+                    <Button onClick={ clearTodo } text="Clear" color="red" align="right"/>
+                </Item>
+            </Container>
         </section>
     );
 

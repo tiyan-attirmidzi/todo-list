@@ -3,10 +3,12 @@ import React from "react";
 import Todo from "../todo/Todo";
 // import styles from "./todos.module.css";
 import * as styles from './todos.styles';
+import Container from '../../layouts/Container';
 
 const Todos = ({ todos, complateTodo }) => {
     return (
-        <section css={ styles.todos }>
+        <section className="todos-component">
+            <Container flexDirection="column" minHeight="500px">
             {
                 todos.length > 0 && todos.map((todo, index) => {
                     return <Todo key={ index } text={ todo.text } isComplated={ todo.isComplated } complateTodo={ complateTodo } index={ index }/>
@@ -19,6 +21,7 @@ const Todos = ({ todos, complateTodo }) => {
                     </div>
                 )
             }
+            </Container>
         </section>
     );
 }
