@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Button from '../button/Button';
+import Button from '../button/ButtonNoJsx';
 // import styles from './header.module.css';
 import * as styles from './header.styles';
 import { useTheme } from 'emotion-theming';

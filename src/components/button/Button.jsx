@@ -30,7 +30,6 @@ const Button = ({ text, onClick, color, align }) => {
     */
     
     const theme = useTheme();
-
     return <button css={ styles.button({ color, align, theme }) } onClick={ onClick }>{ text }</button>
 
 }
