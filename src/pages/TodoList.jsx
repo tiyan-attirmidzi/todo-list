@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import React, { useState } from "react";
 import Paper from '../components/paper/Paper';
-import Header from '../components/header/Header';
+import Header from '../components/header/HeaderNoJsx';
 import TodoForm from '../components/todo-form/TodoForm';
 import Todos from '../components/todos/Todos';
 import Container from '../layouts/Container';

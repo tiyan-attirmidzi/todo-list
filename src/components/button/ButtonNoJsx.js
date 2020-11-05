@@ -5,7 +5,6 @@ import { jsx } from "@emotion/core";
 
 const Button = ({ text, onClick, color, align }) => {
     const theme = useTheme();
-
     return jsx(
         "button", {
             css: styles.button({ color, align, theme }),
